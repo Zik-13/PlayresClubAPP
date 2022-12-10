@@ -29,24 +29,18 @@ public class item_grid extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_grid);
-
         Mainactiv = new Intent(this,MainActivity.class);
-
         Bundle arguments = getIntent().getExtras();
         String _name = arguments.get("ФИО").toString();
         String _phone = arguments.get("Телефон").toString();
         String _email = arguments.get("Почта").toString();
         id = Integer.valueOf(arguments.get("id").toString());
-
         name = findViewById(R.id.name);
         phone = findViewById(R.id.phone);
         email = findViewById(R.id.email);
-
-
         name.getEditText().setText(_name);
         phone.getEditText().setText(_phone);
         email.getEditText().setText(_email);
-
     }
     public void btn_onclick_back_main(View view){this.finish();}
     public void UpdateItem(View view){
@@ -72,16 +66,6 @@ public class item_grid extends AppCompatActivity {
 
 
     public void DeleteItemDialog(View v){
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Вы точно хотите удалить данного сотрудника?")
-                .setMessage("Для подпверждения нажмите ОК")
-                .setPositiveButton("OK",DeleteItem())
-                .setNegativeButton("Отмена",null)
-                .setCancelable(true)
-                .create()
-                .show();
-    }
-    public DialogInterface.OnClickListener DeleteItem(){
         try{
             SQLConnectHelper connection = new SQLConnectHelper();
             cnt = connection.connect();
@@ -94,7 +78,6 @@ public class item_grid extends AppCompatActivity {
             throwables.printStackTrace();
             Log.d("Error - ",throwables.getMessage());
         }
-        return null;
     }
 
 }

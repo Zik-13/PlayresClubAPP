@@ -32,10 +32,6 @@ public class add_new_staff extends AppCompatActivity {
         phone = (TextInputLayout) findViewById(R.id.phone);
         email = (TextInputLayout) findViewById(R.id.email);
         table = (ConstraintLayout) findViewById(R.id.table);
-
-
-
-
     }
     public void btn_onclick_to_main_act(View view){
         this.finish();
@@ -51,12 +47,8 @@ public class add_new_staff extends AppCompatActivity {
                     + Objects.requireNonNull(email.getEditText()).getText()+ "')" ;
             Statement statement = cnt.createStatement();
             ResultSet resultSet = statement.executeQuery(qu);
-
             cnt.close();
-
             name.getEditText().setText("");
-
-
             Log.d("", String.valueOf((resultSet.last())));
         }
         catch (SQLException throwables) {
