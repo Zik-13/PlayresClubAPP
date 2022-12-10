@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:id="@+id/textViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:textSize="24sp"
+        android:text="Main page"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:fontFamily="@font/alatsi"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/toolback"/>
+
+    <ImageButton
+        android:id="@+id/btn_update_list"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:layout_marginBottom="8.3dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="UpdateList"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/gridviewlist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.1"
+        android:background="@drawable/whiteback"
+        app:srcCompat="@drawable/ic_baseline_refresh_24" />
+
+
+    <ImageButton
+        android:id="@+id/btn_add_staff"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="40dp"
+        android:onClick="onclick_view_add_staff"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_create_24"
+        app:layout_constraintBottom_toTopOf="@+id/gridviewlist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/whiteback"
+        android:layout_marginTop="30dp" android:layout_marginRight="320dp"/>
+
+    <ListView
+        android:id="@+id/gridviewlist"
+        android:layout_width="379dp"
+        android:layout_height="641dp"
+        android:layout_marginTop="85dp"
+        app:flow_horizontalAlign="center"
+        app:flow_verticalAlign="bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
